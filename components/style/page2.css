@@ -1,0 +1,205 @@
+ * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #0a0f29, #0d1b3d, #152a4f);
+        color: #fff;
+        padding: 1rem;
+      }
+
+      .header {
+        display: flex;
+        align-items: center; /* vertically center text and logo */
+        justify-content: space-between; /* put text on left, logo on right */
+        margin-bottom: 1rem;
+      }
+      
+      .school{
+        height: 3rem;
+        width: auto;
+        margin-left: 1rem;
+      }
+
+
+      .logo {
+        z-index: -5;
+        position: static; /* remove relative/left */
+        height: 8.5rem;
+        width: auto;
+        margin-left: -7.5rem;
+        opacity: 0.3;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 340px;
+        padding: 1.5rem;
+        background-color: #0e0f2e;
+        backdrop-filter: blur(14px);
+        border-radius: 15px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .container:hover {
+        transform: scale(1.01);
+        box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.6);
+      }
+
+      .qr_container {
+        width: 100%;
+        max-width: 340px;
+        padding: 1.5rem;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.06),
+          rgba(255, 255, 255, 0.02)
+        );
+        backdrop-filter: blur(14px);
+        border-radius: 15px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transform: translateY(40px);
+        animation: riseUp 1.2s ease-out forwards, float 4s ease-in-out infinite;
+      }
+
+      @keyframes riseUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-12px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      canvas {
+        margin-top: 1rem;
+        margin-left: 2rem;
+        border: 2px solid #010809;
+        border-radius: 10px;
+      }
+
+      .timer {
+        color: aquamarine;
+        font-size: 13px;
+        margin-top: 1rem;
+        margin-left: 6.5rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+        margin-top: 1rem;
+        margin-left: 1.8rem;
+        margin-bottom: 0.1rem;
+      }
+
+      #qrCanvas {
+        position: relative;
+        margin-top: 3rem;
+        margin-left: 1.4rem;
+        height: 10.5rem;
+        width: 10.5rem;
+      }
+
+      p {
+        font-size: 13px;
+      }
+
+      .pmap {
+        font-size: 10px;
+        color: #cfd9ff;
+      }
+
+      .map {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 2rem;
+        width: 100%;
+        max-width: 340px;
+      }
+
+      button {
+        margin-left: 1rem;
+        padding: 0.8rem;
+        width: 30%;
+        height: 50px;
+        border: none;
+        border-radius: 8px;
+        background: #081538;
+        cursor: pointer;
+        transition: 0.3s;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
+      }
+
+      button:hover {
+        transform: scale(1.13);
+        box-shadow: 0 10px 20px 0 rgba(31, 38, 135, 0.6);
+      }
+
+      .map-btn svg {
+        height: 20px;
+        width: 20px;
+        align-items: center;
+      }
+
+      .hand {
+        display: inline-block;
+        margin-right: 6px;
+        transform-origin: 80% 80%;
+        animation: wave 2s ease-in-out infinite;
+      }
+
+      @keyframes wave {
+        0% {
+          transform: rotate(0deg);
+        }
+        10% {
+          transform: rotate(14deg);
+        }
+        20% {
+          transform: rotate(-8deg);
+        }
+        30% {
+          transform: rotate(14deg);
+        }
+        40% {
+          transform: rotate(-4deg);
+        }
+        50% {
+          transform: rotate(10deg);
+        }
+        60%,
+        100% {
+          transform: rotate(0deg);
+        }
+      }
